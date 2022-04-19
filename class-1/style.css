@@ -33,7 +33,7 @@ header img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 5px solid rgb(187, 124, 245);
+    border: 5px solid #380b61;
 }
 
 .center {
@@ -69,4 +69,33 @@ footer p {
 
 footer a:hover {
     filter: brightness(0.50);
+}
+
+.field {
+    margin-bottom: 0.7em;
+}
+
+.field label {
+    margin-bottom: 0.5em;
+    display: block;
+}
+.field input {
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field textarea {
+    padding: 2em;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+}
+
+button {
+    border: solid 5px hidden;
+    padding: 0.8em;
+    width: 9em;
+    height: 3em;
+    cursor: pointer;
 }
