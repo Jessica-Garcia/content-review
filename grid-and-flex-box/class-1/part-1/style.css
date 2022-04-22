@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 20vh 70vh 10vh;
+    grid-template-areas: "h h" /*header na linha 1 e nas colunas 1 e 2*/
+                         "m a" /*main na linha 2 e coluna 1, aside na linha 2 coluna2 */
+                         "f f"; /*footer na linha 3 e nas colunas 1 e 2*/
+    /*grid-gap: 10px 20px; => espaçamento entre as linhas e colunas */
+}
+
+header {
+    background: #7159c1;
+    grid-area: h;
+    /*grid-column: 1/3;
+    grid-row: 1/2;*/
+}
+
+main {
+    background: palevioletred;
+    grid-area: m;
+    /* grid-column: 1/2;
+    grid-row: 2/3; */
+}
+
+aside{
+    background: purple;
+    grid-area: a;
+    /* grid-column: 2/3;
+    grid-row: 2/3; */
+}
+
+footer {
+    background: plum;
+    grid-area: f;
+    /* grid-column: 1/3;
+    grid-row: 3/4; */
+}

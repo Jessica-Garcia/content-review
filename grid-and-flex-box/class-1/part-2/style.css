@@ -1,0 +1,64 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    background: black;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    
+
+    /*
+    justify-content: center
+    justify-content: start;
+    justify-content: end;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    */
+
+    /*align-content: center;
+    align-content: center;
+    align-content: start;
+    align-content: end;
+    align-content: space-between;
+    align-content: space-around;
+    justify-content: space-evenely;
+    */
+
+    justify-items: end;
+    
+    /*
+    justify-items: center
+    justify-items: start;
+    justify-items: end;
+    */
+
+    align-items: end;
+
+    /*
+    align-items: center;
+    align-items: start;
+    align-items: end;
+    */
+}
+
+.container > div {
+    background: #7159c1;
+    width: 50%;
+    height: 50%;
+
+    justify-self: end;
+    align-self: center;
+
+}
+
