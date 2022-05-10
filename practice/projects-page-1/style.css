@@ -1,14 +1,28 @@
+
+:root {
+    --body-background: rgb(37, 37, 41);
+    --link-color: white;
+    --text-color: white;
+    --button-color: rgb(78, 74, 74, 0.6);
+    --division-border: rgb(135, 134, 134, 0.3);
+    --nav-background: rgba(46, 46, 52, 0.3);
+    --border-color-avatar: blueviolet;
+    --button-hover-background: rgb(9, 9, 9, 0.6);
+    --division-background: rgb(8, 8, 8, 0.4);
+}
+
 html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background: rgb(37, 37, 41);
+    background: var(--body-background);
+    scroll-behavior: smooth;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--link-color);
 }
 
 .menu-nav a:hover {
@@ -22,13 +36,13 @@ li {
 .nav {
     display: flex;
     justify-content: space-between;
-    background: rgba(46, 46, 52, 0.3);
+    background: var(--nav-background);
     align-items: center;
     width: auto;
 }
 
 .logo {
-    color: white;
+    color: var(--text-color);
     margin-left: 100px;
 }
 
@@ -53,7 +67,7 @@ li {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    border:  2px blueviolet solid;
+    border:  2px var(--border-color-avatar) solid;
 }
 
 .header{
@@ -78,7 +92,6 @@ li {
     align-items: center;
 }
 
-
 .img-proj{
     width: 50px;
     height: 50px;
@@ -87,34 +100,39 @@ li {
 
 .header-element {
     margin: 0.4em;
-    color: azure;
+    color: var(--text-color);
+}
+
+.element-1 {
+    display: flex;
+    align-items: center;
 }
 
 .button {
     width: 150px;
     height: 50px;
     border-radius: 5%;
-    background: rgb(78, 74, 74, 0.6);
-    color: white;
+    background: var(--button-color);
+    color: var(--text-color);
     font-weight: bold;
     margin-left: 2em;
-    border: solid 2px rgb(78, 74, 74, 0.6);
+    border: solid 2px var(--button-color);
 }
 
 .button:hover {
-    background: rgb(9, 9, 9, 0.6);
+    background: var(--button-hover-background);
     border: none;
 }
 
 .division {
     display: flex;
-    background: rgb(8, 8, 8, 0.4) ;
-    color: white;
+    background: var(--division-background);
+    color: var(--text-color);
     height: 8vh;
     align-items: center;
     justify-content: center;
-    border-bottom: rgb(135, 134, 134, 0.3) 1px solid;
-    border-top: rgb(135, 134, 134, 0.3) 1px solid;
+    border-bottom: var(--division-border) 1px solid;
+    border-top: var(--division-border) 1px solid;
 }
 
 .inside-division {
@@ -151,7 +169,7 @@ li {
 }
 
 .content-items {
-    color: white;
+    color: var(--text-color);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -194,7 +212,7 @@ li {
 .footer{
     display: flex;
     justify-content: center;
-    border-top: rgb(135, 134, 134, 0.3) 1px solid;
+    border-top: var(--division-border) 1px solid;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
@@ -205,7 +223,7 @@ li {
     display: flex;
     justify-content: center;
     align-content: center;
-    color: white;
+    color: var(--text-color);
 }
 
 .footer-elements p {
@@ -293,8 +311,7 @@ li {
     .avatar {
         border-radius: 50%;
         width: 30px;
-        height: 30px;
-        border:  2px blueviolet solid;
+        height: 30px;    
     }
     
     .header-elements-1 {
@@ -302,11 +319,6 @@ li {
         flex-direction: column;
         margin: 10px;
         height: 50%;
-    }
-
-    .element-1 {
-        display: flex;
-        align-items: center;
     }
 
     .element-2{
@@ -344,8 +356,8 @@ li {
     }
 
     .button {
-        font-size: 7px;
-        width: 50px;
+        font-size: 8px;
+        width: 60px;
         height: 30px;
         margin-bottom: 0.5em;
         padding: 5px;
@@ -365,7 +377,7 @@ li {
     }
 
     .content-items {
-        color: white;
+        color: var(--text-color);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
@@ -388,9 +400,7 @@ li {
 
     .content-img {
         grid-column: 1;
-        grid-row: 1/3;
-        border: solid 1.5px rgb(66, 65, 148);
-        background-color: rgb(66, 65, 148);
+        grid-row: 1/3;   
     }
     
     .description{
@@ -420,7 +430,7 @@ li {
     .footer{
         display: flex;
         justify-content: center;
-        border-top: rgb(135, 134, 134, 0.3) 1px solid;
+        border-top: var(--division-border) 1px solid;
         margin-top: 1.5em;
         margin-bottom: 1.5em;
     }
@@ -431,11 +441,10 @@ li {
         display: flex;
         justify-content: center;
         align-content: center;
-        color: white;
+        color: var(--text-color);
     }
     
     .footer-elements p {
         align-self: end;  
     }
-
 }
