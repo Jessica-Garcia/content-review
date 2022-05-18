@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: whitesmoke;
+            font-family: sans-serif;
+        }
+
+        .header-container {
+            background-color: aliceblue;
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo{
+            margin: 3rem;
+        }
+        .navigation {
+            display: flex;
+            margin: 3rem;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.8rem;
+        }
+
+        button img {
+            width: 2rem;
+            height: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-button {
+            background-color: lightblue;
+            border-radius: 7%;
+            border: solid 1px lightblue;
+            padding: 0.6em;
+            padding-left: 1em;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .main-container {
+            display: flex;
+            height: 100%;
+            gap: 1rem;
+        }
+
+        .small-part{
+            background-color: lightgray;
+            flex-basis: 20%;
+            margin-left: 0.8rem;
+            height: auto;
+        }
+
+        .larger-part {
+            background-color: lightblue;
+            flex: 1;
+            margin-right: 0.8rem;
+        }
+        article img {
+            width: 30%;
+            height: auto;
+            border: solid white 2px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 0.8rem auto;
+        }
+
+        .footer-container {
+            display: flex;
+            margin: 0 0.8rem;
+            align-items: center;
+            justify-content: center;
+            height: 6rem;
+            margin-top: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <a href="#">
+            <h1 class="logo">
+                LOGO
+            </h1>
+        </a>
+        <nav class="navigation">
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">TESTIMONIALS</a></li>
+                <li>
+                    <button class="contact-button">
+                        Contact
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZS8+PGcgZGF0YS1uYW1lPSJwaG9uZSBjZWx1bGVyIGNvbnRhY3QgY2FsbCIgaWQ9InBob25lX2NlbHVsZXJfY29udGFjdF9jYWxsIj48cGF0aCBkPSJNMjcuMzYsNi4xNSwyNS4wOSwzLjg4YTMsMywwLDAsMC00LjU0LjM1bC0yLjIxLDNhMywzLDAsMCwwLS40NCwyLjY2bC4xMy4zOGMuMjcuODkuNjIsMiwuODQsMi43NGExLDEsMCwwLDEtLjA1LjcsMTIuNDQsMTIuNDQsMCwwLDEtMi4wOCwzLDEsMSwwLDAsMCwwLDEuNDIsMSwxLDAsMCwwLDEuNDEsMCwxNC4xNCwxNC4xNCwwLDAsMCwyLjQ2LTMuNTEsMi45MiwyLjkyLDAsMCwwLC4xNy0yLjE3Yy0uMjEtLjcyLS41Ny0xLjg2LS44NS0yLjc1bC0uMTItLjM5QTEsMSwwLDAsMSwyMCw4LjQ0bDIuMjEtM2ExLDEsMCwwLDEsMS41MS0uMTJsLjY3LjY3LTIsMy4xYTEsMSwwLDAsMCwuODQsMS41NCwxLDEsMCwwLDAsLjg0LS40NWwxLjc3LTIuNzQuMTYuMTVhMi41OSwyLjU5LDAsMCwxLC42OCwxLjg4YzAsMS43Ni0xLjE5LDUtNi43MywxMC40NC01LjgxLDUuNy0xMC40Miw4LTEyLjMzLDYuMDdMNS4yOSwyMy42OEExLDEsMCwwLDEsNSwyMi45YTEsMSwwLDAsMSwuNDEtLjczbDMtMi4yMWExLDEsMCwwLDEsLjg4LS4xNWwxLjg5LjU5TDkuMDUsMjEuOTFhMSwxLDAsMCwwLS4yNCwxLjQsMSwxLDAsMCwwLC44Mi40MiwxLDEsMCwwLDAsLjU3LS4xOEwxNCwyMC44OGExLDEsMCwwLDAsLjI1LTEuNCwxLDEsMCwwLDAtLjUzLS4zNnYwTDkuOTIsMTcuOWEzLDMsMCwwLDAtMi42Ni40NGwtMywyLjIxYTMsMywwLDAsMC0uMzUsNC41NGwyLjI3LDIuMjhBNC4zMSw0LjMxLDAsMCwwLDkuMywyOC42M2MyLjUyLDAsNi4zMi0xLjc1LDEyLTcuMzIsNC44NC00Ljc1LDcuMzEtOC43NCw3LjMzLTExLjg2QTQuNDYsNC40NiwwLDAsMCwyNy4zNiw2LjE1WiIvPjwvZz48L3N2Zz4=" alt=""> 
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-container">
+        <aside class="small-part">
+
+        </aside>
+        <section class="larger-part">
+            <article class="gallery">
+            
+                <img src="../../../class-2/assets/img/cake1.png" alt="">
+                <img src="../../../class-2/assets/img/cake2.png" alt="">
+                <img src="../../../class-2/assets/img/cake3.png" alt="">
+            
+        
+                <img src="../../../class-2/assets/img/coffee1.png" alt="">
+                <img src="../../../class-2/assets/img/coffee2.png" alt="">
+                <img src="../../../class-2/assets/img/coffee3.png" alt="">
+            
+        
+                <img src="../../../class-2/assets/img/delicacies1.png" alt="">
+                <img src="../../../class-2/assets/img/delicacies2.png" alt="">
+                <img src="../../../class-2/assets/img/delicacies3.png" alt="">
+            
+            </article>
+        </section>
+    </main>
+    <footer class="footer-container">
+        <small class="footer-item">
+            <h5>2022</h5>
+        </small>
+    </footer>
+</body>
+</html>
