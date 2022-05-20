@@ -1,10 +1,10 @@
 :root{
     --header-icon-background: gray;
-    --header-infos-height: 80%;
-    --header-info-font-size: 12px;
+    --header-icon-border-color: gray;
+    --header-info-font-size: 14px;
     --header-info-font-color: white;
-    --header-info-background-color: rgb(7, 7, 62);
-
+    --header-info-background-color: rgb(1, 1, 39);
+    --header-border-radius: 2em;
 }
 
 * {
@@ -14,82 +14,196 @@
     font-family: sans-serif;
 }
 
-
-/*HEADER SECTIONS*/
-
-header {
-    border: solid blueviolet 5px;
+body{
+   background-color: rgb(237, 227, 227); 
 }
 
-.info {
-    border: solid red 5px;
-    display: grid;
-    grid-template-columns: 2fr 1.5fr 2fr;
-    height: 10%;
+/*HEADER SECTION*/
+
+header, 
+main, 
+aside, 
+footer {
+    width: 90%;
+    margin: 0 auto;
 }
+
+.information-container {
+    display: flex;
+    font-size: var(--header-info-font-size);
+    color: var(--header-info-font-color);
+    margin-top: 0.5%;
+}
+
+/* CONTACT ARTICLE*/
 
 .contact{
-    height: var(--header-infos-height);
-    border: solid blueviolet 5px;
-    border-top-left-radius: 2em;
-    display: grid;
-    grid-template-areas: "icon title title"
-                         "icon number number";
-    color: var(--header-info-font-color); 
+    flex-grow: 1.5;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1%;
     background-color: var(--header-info-background-color);
+    border-top-left-radius: var(--header-border-radius);
 }
 
-.contact-title {  
-    grid-area: title;
-    margin-top: 5%;
-    margin-left: -8%;
-    font-size: var(--header-info-font-size);
+.contact-information{
+    padding-top: 2%;
 }
 
-.message-icon{
-    grid-area: icon;
-    margin-left: 50%;
-    margin-top: 15%;
-    margin-bottom: 2em;
+.contact-title {
+    padding-bottom: 2%;  
+}
+
+.information-icon{
+    border: solid var(--header-icon-border-color) 10px;
+    border-radius: 50%;
+    background-color: var(--header-icon-background);
 }
 
 .contact-number {
-    grid-area: number;
-    margin-bottom: 10%;
-    margin-left: -8%;
-    font-size: var(--header-info-font-size);
+    border: hidden white 5px;
+    padding-bottom: 5%;
 }
+
+/* OPENING HOURS ARTICLE*/
 
 .opening-hours {
-    border: solid pink 5px;
-    height: var(--header-infos-height);
-    background-color: rgb(18, 40, 58);
-    color: var(--header-info-font-color);
-    font-size: var(--header-info-font-size); 
+    flex-grow: 0.5;
+    display: flex;
+    align-items: center;
+    background-color: rgb(50, 50, 83);
+    gap: 0.6rem;
+    padding-left: 7%;
 
 }
+
+.attendance-information{
+    padding-top: 3%;
+}
+
+.attendance {
+    padding-bottom: 2%;  
+}
+
+.schedule {
+    padding-bottom: 5%;
+}
+
+/* CLIENT AREA ARTICLE*/
 
 .client-area {
-    border: solid purple 5px;
-    height: var(--header-infos-height);
-    border-top-right-radius: 2em;
-    background-color: var(--header-info-background-color);  
-    color: var(--header-info-font-color); 
-
+    flex-grow: 1.5;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header-info-background-color);
+    border-top-right-radius: var(--header-border-radius);
+    padding-left: 3%;
 }
 
-/* .info-icon, .client-icon{
-    background-color: var(--header-icon-background);
-    width: 3em;
-    border-radius: 50%;
-    padding: 15px;
-    
+.button-link {
+    text-decoration: none;
+    font-size: var(--header-info-font-size);
+    color: black;
+    background-color: lightgray;
+    padding: 2% 3%;
+    border-radius: 0.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-right: 3%;
 }
-
-.client-icon {
-    font-size: 1.5em;
-    padding: 10px;
-} */
-
 
 /*HEADER NAV*/
+
+#nav-container{
+
+    display: flex;
+    align-content: start;
+    padding: 1% 3%;
+    background-color: aliceblue;
+}
+
+#logo {
+    color: var(--header-info-background-color);
+    font-size: 2em;
+    margin-left: 5%;
+    text-decoration: none;
+}
+
+#logo p {
+    font-size: 0.35em;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: flex-start;
+    justify-content: end;
+    flex-grow: 1;
+    margin-left: 2%;
+    padding-right: 3%;
+    gap: 2%;
+}
+.menu-item {
+    display: flex;
+    text-decoration: none;
+    
+    font-size: 0.7em;
+    text-transform: uppercase;
+    font-weight: 600;
+    align-self: center;
+}
+
+.menu-link-item {
+    text-decoration: none;
+    color: var(--header-info-background-color);
+}
+
+.open-button-link {
+    background-color: var(--header-info-background-color);
+    color: white;
+    padding: 6% 9px;
+    border-radius: 15px;
+}
+
+/*Main Section about*/
+
+.about-section {
+    background-image: url('./assets/contabilidade-1.jpg');
+    background-position: center top;
+    background-repeat: repeat-x;
+    background-size: cover;
+    height: 50vh;
+}
+
+.about-article {
+    padding: 5%;
+    text-align: justify;
+}
+
+.about-title {
+    font-size: 1.3em;
+    margin-bottom: 1.5%;
+    color: var(--header-info-background-color);
+}
+
+.about-text {
+    font-size: 0.8em;
+    margin-bottom: 2%;
+    font-weight: 500;
+    color: black;
+}
+
+.about-link {
+    text-decoration: none;
+    color: white;
+    background-color: var(--header-info-background-color);
+    padding: 1% 2%;
+    border-radius: 5px;
+}
