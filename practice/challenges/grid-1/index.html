@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-image: linear-gradient(#b7b7b7, #9c9c9c);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            width: 400px;
+            margin: 100px auto;
+            height: 500px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 8px;
+            padding: 40px;
+        }
+
+        .display {
+            /*
+            border-top: whitesmoke solid 3px;
+            border-left: whitesmoke solid 3px;
+            border-bottom: grey solid 1px;
+            border-right: grey solid 1px;
+            */
+            background-image: linear-gradient(#c5c5c5, #e0e0e0);
+            box-shadow: inset 3px 2px 0 white;
+            border-radius: 3px;            
+            height: 60px;
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .add{
+            grid-column: 4;
+            grid-row: 5/-1;
+            background-color: #adadad;
+            box-shadow: inset 1px 1px 0 white;
+
+        }
+
+        .zero {
+            grid-column: 1/3;
+            grid-row: 6;
+            background-color: #adadad;
+            box-shadow: inset 1px 1px 0 white;
+        }
+
+        button {
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display">0</div>
+        <button>AC</button> <button>%</button>
+        <button>x</button> <button>/</button>
+        <button>7</button> <button>8</button>
+        <button>9</button> <button>=</button>
+        <button>4</button> <button>5</button>
+        <button>6</button> <button>-</button>
+        <button>1</button> <button>2</button>
+        <button>3</button> <button class="add">+</button>
+        <button class="zero">0</button> <button>,</button>
+        
+    </div>
+</body>
+</html>
