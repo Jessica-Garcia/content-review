@@ -262,24 +262,118 @@ footer {
 
 /* Main services section*/
 
-#services-container {
-    padding: 200px;
-    text-align: center;
+#services-section {
+    padding-top: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 70px;
 }
 
 .services-title {
-    
+    text-align: center;
+    padding-bottom: 25px;
 }
 
-.services-title h6{
-    color: rgb(158, 154, 154);
+.services-title h5{
+    color: rgb(167, 159, 148);
     padding-top: 5px;
+    font-weight: lighter;
 }
 
 .services{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
+    row-gap: 50px;
+    width: 900px;
     margin-top: 30px;
+}
+
+.service-item {
+    display: grid;
+    grid-template-areas: 
+        "ic title title"
+        "ic parag parg"
+        ". link link"
+    ;
+    gap: 5px;
+}
+
+.service-item i {
+   grid-area: ic;
+   font-size: 30px;
+   background-color: rgb(205, 198, 187);
+   height: 55%;
+   width: 60px;
+   text-align: center;
+   padding: 5px;
+   padding-top: 10px;
+}
+
+.service-item h5 {
+   grid-area: title;
+}
+
+.service-item p {
+   grid-area: parag;
+   color: rgb(167, 159, 148);
+   font-size: 12px;
+}
+.service-item a {
+   grid-area: link;
+   text-decoration: none;
+   color: rgb(167, 159, 148);
+   font-size: 12px;
+   font-weight: 700;
+}
+
+/*ASIDE*/
+
+#aside-container {
+    
+    background-color: rgb(19, 19, 41);
+}
+#contact-section {
+    display: flex;
+}
+.form-contact {
+    width: 80%;
+
+}
+
+.contact-text {
+    color: aliceblue;
+    width: 50%;
+    padding: 40px;
+    font-size: 12px;
+}
+
+.contact-text h1{
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.contact-p1 {
+    padding-bottom: 40px;
+}
+
+#footer-container{
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color:   rgb(205, 198, 187);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 10px;
+    padding: 30px;
+}
+
+.small-text{
+   color: rgb(81, 79, 79);
+   width: 50%;
+   font-size: 11px;
+   line-height: 18px;
 }
