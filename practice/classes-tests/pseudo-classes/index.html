@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            font-family: sans-serif;
+        }
+
+        .one {
+            background-color: purple;
+            padding: 10px;
+        }
+
+        .two {
+            background-color: pink;
+        }
+
+        .for{
+            background-color: lightgreen;
+        }
+
+        .three{
+            background-color: lightskyblue;
+        }
+
+        .five {
+            background-color: steelblue;
+            width: 400px;
+        }
+        [class] {
+            padding: 10px;
+            margin: 10px;
+            height: auto;
+        }
+
+        p {
+            background-color: azure;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        h1[title]{
+
+            color: blueviolet;
+        }
+
+        [title^='l'] {
+            background-color: aqua;
+        }
+
+        [class$='o']{
+            border: solid 5px yellow;
+        }
+
+        p:not([class]) {
+            width: 50%;
+            border: solid darkolivegreen 5px ;
+        }
+
+        h1:hover, .two > a:hover, .p2:hover {
+
+            color: blue;
+            font-size: 26px;
+        }
+
+        article a {
+
+            text-decoration: none;
+        }
+
+        article > .p2 {
+            border: solid red 5px;
+        }
+
+        .one > ul > li {
+            color: red;
+        }
+
+        ul + p {
+
+            color: orange;
+        }
+
+        h1 ~ p {
+
+            height: 100px;
+            padding: 0 auto;
+        }
+
+        article:nth-child(odd) a {
+            color: blueviolet;
+            background-color: azure;
+            padding: 10px;
+            background-color: bisque;
+            border: 5px solid olive;
+            margin: 20px;
+            display: block;
+        }
+
+        article:nth-child(even) h1 + p{
+
+            color: navy;
+            font-weight: bold;
+        }
+
+        p:first-child {
+            font-size: 30px;
+            color: purple;
+        }
+
+        .for p:nth-of-type(2) {
+            font-size: 20px;
+        }
+
+        .five p:nth-child(even) {
+            background-color: yellow;
+        }
+
+        .five p:nth-child(odd) {
+            background-color: green;
+        }
+
+        .five a:hover::after{
+            content: "";
+            background-color: brown;
+            color: azure;
+            display: block;
+            height: 20px;
+            width: 20px;
+        }
+
+        a[target="_blank"]::after{
+            content:"";
+            background-image: url('./img/open_in_new_window.png');
+            background-size: 20px 20px;
+            display: inline-block;
+            width: 20px; 
+            height: 20px;
+            margin: 10px;
+            position: relative;
+            top: 15px;
+        }
+
+        a[href$='.pdf']::before {
+            content:"";
+            background-image: url('./img/pdf-icon.png');
+            background-size: 20px 20px;
+            display: inline-block;
+            width: 20px; 
+            height: 20px;
+            margin: 10px;
+            position: relative;
+            top: 15px;
+        }
+
+        div:first-child {
+            background-color: bisque;
+        }
+
+        .chk {
+            border: solid 2px #bbb;
+            background-color: #ddd;
+            display: inline-block;
+            border-radius: 5px;
+            width: 5px;
+            height: 5px;
+            position: relative;
+            top: 15px;
+        }
+
+        label {
+            height: 15px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        input[type="checkbox"]:checked + label .chk {
+
+            background-color: #555;
+        }
+
+        input[type="checkbox"]:checked + label .chk::before{
+            content: "";
+            position: absolute;
+            top: 0px;
+            right:4px;
+            bottom: 4px;
+            left: 4px;
+            display:block;
+            border: solid white 3px;
+            transform: rotate(45deg);
+            border-top: hidden;
+            border-left: hidden;
+            box-sizing: border-box;
+            margin: 2px;
+            border-radius: 2px;
+        }
+
+
+        .diver input[type="checkbox"] {
+            width: 0.5px;
+            height: 0.5px;
+            /* visibility: hidden; */
+            opacity: 0;
+            overflow: hidden;
+            display: inline-block;
+            margin: 0;
+        }
+
+    
+
+
+
+        .c {
+            margin-right: 15px;
+            font-size: 18px;
+            color: brown;
+        }
+
+        .ch {
+            background-color: #ddd;
+            display: inline-block;
+            width: 60px;
+            height: 20px; 
+            border-radius: 30px;
+            position: relative;
+            top: 20px;
+        }
+
+        .ch::before {
+            content: '';
+            display: block;
+            background-color: #555;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transition: all .2s ease-in-out;
+        }
+
+        
+        .c input:checked + .ch::before {
+            transform: translateX(40px);
+            background-color: green;
+        }
+
+        .c input:focus + .ch {
+            box-shadow: 0 0 0 1px red;
+        }
+        .c input{
+            opacity: 0;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+        }
+        
+
+
+        div:nth-child(2){
+
+            background-color: plum;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="diver">
+
+        <a href="https://www.google.com.br/" target="_blank">
+            Google
+        </a>
+        <a href="qq.pdf">
+            PDF
+        </a>
+        <br>
+        <br>
+        <hr>
+        <input type="checkbox" name="ch" id="chk">
+        <label for="chk">
+            <span class="chk"></span>
+            Li e aceito os termos
+        </label>
+        
+    </div>
+
+    <div>
+        <label for="ch" class="c">
+            <input type="checkbox" name="c" id="ch">
+            <span class="ch"></span>
+            Esporte
+        </label>
+
+        <label for="ch2" class="c">
+            <input type="checkbox" name="c2" id="ch2">
+            <span class="ch"></span>
+            Música
+        </label>
+
+        
+        <label for="ch3" class="c">
+            <input type="checkbox" name="c3" id="ch3">
+            <span class="ch"></span>
+            Programação
+        </label>
+
+    </div>
+
+    <article class="one">
+        <ul>
+            <li>item lista 1</li>
+            <li>item lista 2</li>
+            <li>item lista 3</li>
+        </ul>
+        <p> parágrafo 1 - article 1</p>
+        <p class="p2"> parágrafo 2 - article 1</p>
+        <p> parágrafo 3 - article 1</p>
+        <a href="#">link</a>
+    </article>
+
+    <article class="two">
+        <p>
+            parágrafo 1 - article 2
+        </p>
+
+        <h1 title="title">Título - article 2</h1>
+
+        <p>
+            parágrafo 2 - article 2
+        </p>
+
+        <p>
+            parágrafo 3 - article 2
+        </p>
+
+        <a href="#" title="link">link 1- article 2</a>
+        <a href="#" title="link">link 2- article 2</a>
+    </article>
+
+    <article class="three">
+        <p>
+            parágrafo 1 - article 3
+        </p>
+        <p>
+            parágrafo 2 - article 3
+            
+        </p>
+
+        <ul>
+            <li>item lista 1</li>
+            <li>item lista 2</li>
+            <li>item lista 3</li>
+        </ul>
+        <p> parágrafo 3 - article 3 </p>
+        <a href="#">link</a>
+    </article>
+
+    <article class="for">
+        <h1 title="title">Título article 4</h1>
+        <p>
+            parágrafo 1 - article 4
+            <a href="#">link 1 <b>negrito 1</b> </a>
+        </p>
+        <p>
+            parágrafo 2 - article 4
+            <a href="#">link 2 <b>negrito 2</b> </a>
+        </p>
+        <p>
+            parágrafo 3 - article 4
+            <a href="#">link 3 <b>negrito 3</b> </a>
+        </p>
+    </article>
+
+    <article class="five">
+        <h3 title="title">Título article 5</h3>
+        <p>
+            parágrafo 1 - article 5
+            <a href="#">link 1 <b>negrito 1</b> </a>
+        </p>
+        <p>
+            parágrafo 2 - article 5
+            <a href="#">link 2 <b>negrito 2</b> </a>
+        </p>
+        <p>
+            parágrafo 3 - article 5
+            <a href="#">link 3 <b>negrito 3</b> </a>
+        </p>
+    </article>
+
+</body>
+</html>
