@@ -249,8 +249,29 @@
     </main>
     <aside id="aside-container">
         <section id="contact-section">
-            <form action="" class="form-contact">
-                
+            <form action="" method="post" class="form-contact">
+                <fieldset class="fieldset">
+                    <legend class="legend">Contato</legend>
+                    <label for="name" class="label label-name">Seu nome</label>
+                    <input type="text" name="name" id="name" class="input" required>
+
+                    <label for="email" class="label label-email">Seu email</label>
+                    <input type="email" name="email" id="email" class="input" required>
+
+                    <label for="phone" class="label label-phone">Seu telefone</label>
+                    <input type="tel" name="phone" id="phone" class="input" required>
+
+                    <label for="message" class="label label-mess">Mensagem</label>
+                    <input type="text-area" name="message" id="message" class="input">
+
+                    <label for="robot" class="label-robot">
+                        <input type="checkbox" name="robot" id="robot" class="input-robot">
+                        <span class="span-robot"></span>
+                        Não sou um robô
+                    </label>
+                    <button type="submit" class="form-button">Enviar</button>
+
+                </fieldset>
             </form>
             <article class="contact-text">
                 <h1>Fale Conosco</h1>

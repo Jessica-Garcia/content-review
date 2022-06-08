@@ -335,12 +335,91 @@ footer {
     
     background-color: rgb(19, 19, 41);
 }
-#contact-section {
-    display: flex;
-}
 .form-contact {
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    border: solid red 5px;
+}
 
+.fieldset{
+    border: none;
+    display: grid;
+    grid-template-areas: 
+    "label-name label-name"
+    "input-name input-name"
+    "label-email label-phone"
+    "input-email input-phone"
+    "label-mess label-mess"
+    "input-mess input-mess"
+    "label-robot label-robot"
+    "form-button form-buton";
+    margin: 5% 10%;
+    column-gap: 4%;
+    row-gap: 1%;
+}
+
+.label-name{
+    grid-area: label-name;
+}
+
+#name{
+    grid-area: input-name;
+}
+
+.label-email{
+    grid-area: label-email;
+}
+#email{
+    grid-area: input-email;
+}
+.label-phone {
+    grid-area: label-phone;
+}
+#phone{
+    grid-area: input-phone;
+}
+
+.label-mess{
+    grid-area: label-mess;
+}
+
+#message{
+    grid-area: input-mess;
+}
+
+.label-robot{
+    grid-area: label-robot;
+}
+.form-button{
+    grid-area: form-button;
+}
+.legend {
+    opacity: 0;
+    overflow: hidden;
+}
+
+.label, 
+.label-robot,
+.span-robot, 
+.input {
+    color: aliceblue;
+    margin: 2% 0;
+    
+}
+
+.input{
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: 0.1px solid aliceblue;
+    background-color: rgb(19, 19, 41);
+    
+}
+
+
+#contact-section {
+    display: flex;
 }
 
 .contact-text {
