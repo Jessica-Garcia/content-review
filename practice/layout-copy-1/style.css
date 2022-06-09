@@ -17,7 +17,7 @@
 }
 
 body{
-   background-color: rgb(237, 227, 227); 
+   background-color: rgb(237, 227, 227);
 }
 
 /*HEADER SECTION*/
@@ -339,7 +339,6 @@ footer {
     width: 80%;
     display: flex;
     flex-direction: column;
-    border: solid red 5px;
 }
 
 .fieldset{
@@ -363,6 +362,9 @@ footer {
     grid-area: label-name;
 }
 
+.label-name::after{
+    content: '*';
+}
 #name{
     grid-area: input-name;
 }
@@ -385,27 +387,92 @@ footer {
 }
 
 #message{
+    padding: 30px;
     grid-area: input-mess;
 }
 
 .label-robot{
     grid-area: label-robot;
+    background-color: rgb(245, 235, 235);
+    color: black;
+    font-size: 0.8em;
+    margin-top: 3%;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
 }
+
+.label-robot::after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-image: url('./assets/recaptcha.png');
+    background-size: cover;
+    margin-left: 15%;
+    margin-right: 0;
+
+}
+
+.span-robot{
+    border: #aaa 1px solid;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(247, 242, 242);
+    margin-left: 3%;
+    margin-right: 3%;
+    position: relative;
+
+}
+
+.label-robot input[type="checkbox"]:checked + .span-robot::before{ 
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: solid green 3px;
+    transform: rotate(45deg);
+    border-top: none;
+    border-left: none;
+    left: 1px;
+    bottom: 4px;
+    right: 4px;
+    top: 0;
+    box-sizing: border-box;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+.label-robot input[type="checkbox"]{
+    overflow: hidden;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
 .form-button{
     grid-area: form-button;
+    margin-top: 5%;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    border: solid 1px black;
+    margin-bottom: 40px;
 }
 .legend {
     opacity: 0;
     overflow: hidden;
 }
 
-.label, 
-.label-robot,
-.span-robot, 
+.label,  
 .input {
     color: aliceblue;
-    margin: 2% 0;
-    
+    font-size: 0.8em;
+}
+
+.label {
+    margin-top: 3%;
 }
 
 .input{
@@ -414,7 +481,7 @@ footer {
     border-right: transparent;
     border-bottom: 0.1px solid aliceblue;
     background-color: rgb(19, 19, 41);
-    
+    padding: 10px;
 }
 
 
@@ -436,6 +503,12 @@ footer {
 
 .contact-p1 {
     padding-bottom: 40px;
+    line-height: 20px;
+}
+
+.contact-p2 {
+    margin-top: 15%;
+    line-height: 20px;
 }
 
 #footer-container{
