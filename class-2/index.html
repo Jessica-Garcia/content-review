@@ -9,20 +9,131 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/img/logo.png" class="nav__logo-img">
+                Coffee.
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="class">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="class">
+                        <a href="#products" class="nav__link">Products</a>
+                    </li>
+                    <li class="class">
+                        <a href="#premium" class="nav__link">Premium</a>
+                    </li>
+                    <li class="class">
+                        <a href="#blog" class="nav__link">Blog</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt' ></i>
+            </div>
+        </nav>
     </header>
     
     <main>
-        <h1 class="section__title">
-            
-        </h1>
+        <section class="home-grid" id="home">
+            <div class="home__container">
+                <div class="home__content container">
+                    <h1 class="home__title">
+                        Escolha seu café favorito e aproveite <span>.</span>
+                    </h1>
+                    <p class="home__description">
+                        Compre os melhores e mais deliciosos cafés
+                    </p>
+                    <div class="home__data">
+                        <div class="home__data-group">
+                            <h2 class="home__data-number">120k</h2>
+                            <h3 class="home__data-title">Depoimentos</h3>
+                            <p class="home__data-description">
+                                Depoimentos de diversos clientes que confiaram em nós.
+                            </p>
+                        </div>
+
+                        <div class="home__data-group">
+                            <h2 class="home__data-number">340+</h2>
+                            <h3 class="home__data-title">Produtos Exclusivos</h3>
+                            <p class="home__data-description">
+                                Preparação com ingredientes de qualidade.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="#specialty">
+                        <img src="./assets/img/scroll.png" alt="" class="home__scroll">
+                    </a>
+                </div>
+            </div>
+
+            <img src="./assets/img/home.png" alt="" class="home__img">
+
+        </section>
+
+        <!-- ESPECIALTY -->
+
+        <div class="specialty section container" id="specialty">
+            <div class="specialty__container">
+                <div class="specialty__box">
+                    <h2 class="section__title">
+                        Cafés especiais que te fazem feliz e te animam!
+                    </h2>
+
+                    <div>
+                        <a href="" class="button specialty__button">Veja mais</a>
+                    </div>
+                </div>
+
+                <div class="specialty__category">
+                    <div class="specialty__group">
+                        <img src="./assets/img/specialty1.png" alt="" class="specialty__img">
+                        <h3 class="specialty__title"> Café Selecionado</h3>
+                        <p class="specialty__description">
+                            Selecionamos o melhor café premium, para um verdadeiro sabor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="specialty__category">
+                    <div class="specialty__group">
+                        <img src="./assets/img/specialty2.png" alt="" class="specialty__img">
+                        <h3 class="specialty__title">Cookies Deliciosos</h3>
+                        <p class="specialty__description">
+                            Aprecie seu café com cookies exclusivos
+                        </p>
+                    </div>
+                </div>
+
+                <div class="specialty__category">
+                    <div class="specialty__group">
+                        <img src="./assets/img/specialty3.png" alt="" class="specialty__img">
+                        <h3 class="specialty__title"> Saboreie em casa</h3>
+                        <p class="specialty__description">
+                            Aprecie o melhor café no conforto de sua casa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products -->
+
+        <section class="quality section" id="premium"></section>
+
     </main>
     
-    <footer>
+    <footer class="footer">
 
     </footer>
 
-    <script src=""></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
