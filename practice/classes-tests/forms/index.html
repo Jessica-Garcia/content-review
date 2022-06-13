@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+           
+            color: white;
+            display: flex;
+            font-family: sans-serif;
+            background-color:darkslateblue;
+        }
+
+        .test-form {
+
+            width: 50%;
+            margin: 0 auto;
+            padding: 5%;
+            background-color: rgba(24, 24, 25, 0.5);
+            font-weight: 700;
+
+        }
+
+        .fieldset,
+        .field-group{
+            border: none;
+        }
+        /*
+        .field-group{
+            display: flex;
+            flex-direction: column;
+        }
+        */
+        .legend {
+            opacity: 0;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+        }
+
+        .legend-form {
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 5%;
+        }
+
+        .personal-data {
+            display: grid; 
+            grid-template-areas: 
+                "name-label name-label"
+                "name-input name-input"
+                "style-label style-label"
+                "style-input style-input"
+                "url-label url-label"
+                "url-input url-input"
+                "file-label color-label"
+                "file-input color-input"
+                "age-label date-label"
+                "age-input date-input"
+            ;
+            justify-content: center;
+            padding-bottom: 4%;
+            column-gap: 2%;
+        }
+
+        .personal-data label {
+            margin: 2% 1%;
+        }
+        .personal-data input {
+            margin-bottom: 4%;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .personal-data input:focus {
+            
+            background-color: rgba(24, 24, 25, 0.5);
+            color: aliceblue;
+            font-size: 17px;
+        }
+
+        .name-label {
+            grid-area: name-label;
+        }
+        .name-input {
+            grid-area: name-input;
+            padding: 3%;
+        }
+
+        .style-label {
+            grid-area: style-label;
+        }
+
+        .style-input {
+            grid-area: style-input;
+            padding: 3%;
+
+        }
+
+        .url-label {
+            grid-area: url-label;
+        }
+
+        .url-input {
+            grid-area: url-input;
+            padding: 3%;
+
+        }
+
+        .file-label { 
+            grid-area: file-label;
+        }
+
+        .file-input {
+            grid-area: file-input;
+            padding: 3%;
+
+        }
+        
+        .color-label{
+            grid-area: color-label;
+        }
+
+        .color-input {
+            grid-area: color-input;
+            padding: 3%;
+            width: 60%;
+            height: 40px;
+        }
+
+        .age-label { 
+            grid-area: age-label;
+        }
+
+        .age-input {
+            grid-area: age-input;
+            padding: 3%;
+            width: 50%;
+        }
+
+        .date-label {
+            grid-area: date-label;
+        }
+        .date-input {
+            grid-area: date-input;
+            padding: 0% 3%;
+        }
+
+        .interests-field {
+            padding: 2%;
+            display: inline;
+            border: solid red 5px;
+        }
+
+        .interests-field legend {
+
+            margin-bottom: 2%;
+
+        }
+        .interests-field div {
+            margin-bottom: 2%;
+        }
+
+        .coffee-field {
+            display: inline;
+            border: solid red 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form action="" method="post" enctype=”multpart/form-data” class="test-form">
+
+        <fieldset class="field-group">
+            <legend class="legend-form"><h1>Formulário de teste</h1></legend>
+
+            <fieldset class="fieldset personal-data">
+                <legend class="legend">Informações Pessoais</legend>
+                <label for="name" class="name-label">Nome</label>
+                <input 
+                    type="text" 
+                    name="name" id="name" 
+                    class="name-input"
+                    required 
+                    placeholder="Digite seu nome"
+                    class="name-input"
+                >
+    
+                <label for="music-style" class="style-label">Qual seu estilo musical favorito</label>
+                <input 
+                    type="text" 
+                    name="music-style" 
+                    id="music-style" 
+                    list="music-style-data"
+                    class="style-input"
+                >
+                <datalist id="music-style-data">
+                    <option value="Rock'n roll"></option>
+                    <option value="Pop"></option>
+                    <option value="Blues"></option>
+                    <option value="Reggae"></option>
+                    <option value="Jazz"></option>
+                </datalist>
+    
+                <label for="url" class="url-label">Url do site favorito</label>
+                <input 
+                    type="url" 
+                    name="url" 
+                    id="url"
+                    placeholder="Digite uma url"
+                    class="url-input"
+                >
+    
+                <label for="artist" class="file-label">Adicione imagens dos seus artistas favoritos</label>
+                <input 
+                    type="file"
+                    name="artist" 
+                    id="artist"
+                    accept="image/*"
+                    multiple
+                    class="file-input"
+                >
+    
+                <label for="color" class="color-label">Selecione sua cor favorita</label>
+                <input 
+                    type="color"
+                    name="color" 
+                    id="color"
+                    value="#00ff00"
+                    class="color-input"
+                >
+    
+                <label for="age" class="age-label">Digite qual sua idade</label>
+                <input 
+                    type="number" 
+                    name="age" 
+                    id="age" 
+                    min="12" 
+                    max="50"
+                    class="age-input"
+                >
+    
+                <label for="birth" class="date-label">Data de nascimento</label>
+                <input 
+                    type="date" 
+                    name="birth" 
+                    id="birth" 
+                    min="1972-06-01" 
+                    max="2010-06-01"
+                    class="date-input"
+                >
+            </fieldset>
+
+            <fieldset class="fieldset interests-field">
+                <legend>Selecione seus interesses</legend>
+                <div>
+                    <input 
+                        type="checkbox" 
+                        id="programing"
+                        name="interest"
+                        checked
+                        value="programing" 
+                    >
+                    <label for="programing">Programação</label>
+                </div>
+
+                <div>
+                    <input 
+                        type="checkbox" 
+                        id="music"
+                        name="interest"
+                        value="music"
+                    >
+                    <label for="music">Música</label>
+                    
+                </div>
+
+                <div>
+                    
+                    <input 
+                        type="checkbox" 
+                        id="cinema"
+                        name="interest"
+                        value="cinema"
+                    >
+                    <label for="cinema">Cinema</label>
+                </div>
+
+                <div>
+
+                    <input 
+                        type="checkbox" 
+                        id="literature"
+                        name="interest"
+                        value="literature"
+                    >
+                    <label for="literature">Literatura</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="fieldset coffee-field">
+                <legend>Você gosta de café?</legend>
+
+                <input type="radio" id="yes" name="coffee" value="yes" checked>
+                <label for="yes">Sim</label>
+
+                <input type="radio" id="no" name="coffee" value="no">
+                <label for="no">Não</label>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="legend">Seus hobbies</legend>
+                <label for="hobbies">Quais as 3 coisas que você mais gosta de fazer nas horas vagas</label>
+                <textarea 
+                    name="hobbies" 
+                    id="hobbies" 
+                    cols="30" 
+                    rows="10"
+                    minlength="3"
+                    maxlength="200"
+                    placeholder="Digite aqui seus hobbies favoritos"
+                ></textarea>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="legend">Carros</legend>
+                <label for="carbrand">Quais marcas de carro você prefere?</label>
+                <select name="carbrand" id="carbrand" multiple size="3">
+                    <option value="">Selecione as marcas</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="mercedez">Mercedez</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="tesla">Tesla</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="legend">Animais</legend>
+
+                <label for="pets">Selecione seus animais favoritos</label>
+                
+                <select name="pets" id="pets" multiple size="4">
+                    <optgroup label="Mamíferos">
+                        <option value="dog">Cão</option>
+                        <option value="cat">Gato</option>
+                        <option value="seal">Foca</option>
+                        <option value="dolphin">Golfinho</option>
+                    </optgroup>
+
+                    <optgroup label="Aves">
+                        <option value="macaw">Arara</option>
+                        <option value="parrot">Papagaio</option>
+                        <option value="parakeet">Periquito</option>
+                        <option value="hawk">Gavião</option>
+                    </optgroup>
+                    <optgroup label="Répteis">
+                        <option value="snake">Cobra</option>
+                        <option value="alligator">Jacaré</option>
+                    </optgroup>
+                </select>
+
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="legend">Pesquisas</legend>
+                <datalist id="searchterms">
+                    <option>Música</option>
+                    <option>Programação</option>
+                    <option>Cinema</option>
+                    <option>Arte</option>
+                    <option>Ciência</option>
+                    <option>Economia</option>
+                </datalist>
+                <input 
+                    type="search" 
+                    name="search" 
+                    id="search"
+                    list="searchterms"
+                    aria-label="Campo de pesquisa: digite seu termo de busca"
+                    size="29"
+                    placeholder="Faça sua busca"
+                >
+                <button>Pesquisar</button>
+
+
+                <label for="searchId">Pesquisar pelo ID</label>
+                <input 
+                    type="search" 
+                    name="searchId" 
+                    id="searchId"
+                    aria-label="Campo de pesquisa: digite o ID"
+                    size="8"
+                    pattern="[0-9]{2}"
+                    title="O id precisa ser um número com 2 dígitos"
+                    placeholder="Buscar ID"
+                >
+                <button>Pesquisar ID</button>
+
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="legend">Dados para Login</legend>
+                
+                <label for="email">E-mail</label>
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+    
+                <label for="password">Senha</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    placeholder="Digite sua senha"
+                    minlength="6"
+                    maxlength="10"
+                >
+            </fieldset>
+            
+        </fieldset>
+
+        <button type="reset">Limpar</button>
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+</html>
