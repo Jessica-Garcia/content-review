@@ -34,6 +34,7 @@
             font-weight: 700;
             display: flex;
             flex-direction: column;
+            box-shadow: 10px 10px 100px black;
         }
 
         .fieldset,
@@ -55,8 +56,18 @@
 
         .legend-form {
             text-align: center;
-            font-size: 12px;
+            font-size: 18px;
             margin-bottom: 5%;
+            /* text-shadow: -1px 1px 0 #5d5d5d,
+                        -2px 2px 0 #727272,
+                        -3px 3px 0 #868686,
+                        -4px 4px 0 #a3a3a3,
+                        -5px 5px 0 #bcbcbc; */
+            text-shadow: -1px 1px 0 #e15151,
+            -2px 2px 0 #d2cc21,
+            -3px 3px 0 #0bb60b,
+            -4px 4px 0 #e32727,
+            -5px 5px 0 #e0eb17;
         }
 
         .personal-data {
@@ -101,6 +112,7 @@
         .name-input {
             grid-area: name-input;
             padding: 3%;
+            box-shadow: 5px 5px 10px 0 black;
         }
 
         .style-label {
@@ -110,6 +122,7 @@
         .style-input {
             grid-area: style-input;
             padding: 3%;
+            box-shadow: 5px 5px 10px 0 black;
         }
 
         .url-label {
@@ -119,6 +132,7 @@
         .url-input {
             grid-area: url-input;
             padding: 3%;
+            box-shadow: 5px 5px 10px 0 black;
         }
 
         .file-label { 
@@ -148,8 +162,9 @@
 
         .age-input {
             grid-area: age-input;
-            padding: 3%;
-            width: 60%;
+            padding: 5%;
+            width: 70%;
+            box-shadow: 5px 5px 10px 0 black;
         }
 
         .date-label {
@@ -157,9 +172,9 @@
         }
         .date-input {
             grid-area: date-input;
-            padding: 0% 3%;
-            width: 100%;
-
+            padding: 0% 5%;
+            box-shadow: 5px 5px 10px 0 black;
+            width: 100%; 
         }
 
         .interests-and-tastes {
@@ -215,12 +230,14 @@
         }
 
         .hobbies-field  textarea{
-            max-width: 80%;
+            max-width: 70%;
             max-height: 200px;
-            min-width: 80%;
+            min-width: 70%;
             min-height: 200px;
             padding: 3%;
             border-radius: 15px 25px;
+            box-shadow: 5px 5px 10px black;
+            border: none;
         }
 
         .cars-and-pets-preferences{
@@ -244,6 +261,8 @@
             padding: 5%;
             width: 100%;
             height: 100px;
+            box-shadow: 0px 5px 10px 2px black;
+            border: none;
         }
 
         .carbrands-field option{
@@ -264,6 +283,8 @@
             padding: 5%;
             width: 100%;
             height: 100px;
+            box-shadow: 0px 5px 10px 2px black;
+            border: none;
         }
 
         .pets-field option{
@@ -290,7 +311,7 @@
             margin-left: 7%;
             margin-bottom: 2%;
             border: none;
-
+            box-shadow: 0px 5px 10px 2px black;
         }
 
         .search-field div:nth-child(2) button{
@@ -306,7 +327,7 @@
             width: 100%;
             height: 45px;
             border: none;
-
+            box-shadow: 5px 5px 10px 2px black;
         }
         .search-field div:nth-child(3) {
             padding: 0 2%;
@@ -332,6 +353,7 @@
             margin-left: 7%;
             margin-bottom: 2%;
             border: none;
+            box-shadow: 0px 5px 10px 2px black;
         }
         .search-field div:nth-child(3) button{
             grid-row: 2;
@@ -349,6 +371,7 @@
             width: 100%;
             height: 45px;
             box-sizing: border-box;
+            box-shadow: 5px 5px 10px 2px black;
         }
 
         /* .search-field input:focus {
@@ -375,6 +398,7 @@
             border: none;
             font-size: 16px;
             padding: 3%;
+            box-shadow: 0px 5px 10px 2px black;
         }
 
         /* .login-field input:focus {
@@ -403,6 +427,8 @@
             border-radius: 15px;
             height: 50px;
             border: none;
+            box-shadow: 5px 5px 10px 2px black;
+            margin-right: 2%;
         }
 
         .test-form .buttons:nth-child(2){
@@ -437,6 +463,7 @@
                     id="music-style" 
                     list="music-style-data"
                     class="style-input"
+                    placeholder="Estilo musical"
                 >
                 <datalist id="music-style-data">
                     <option value="Rock'n roll"></option>
@@ -482,6 +509,7 @@
                     min="12" 
                     max="50"
                     class="age-input"
+                    placeholder="Idade"
                 >
     
                 <label for="birth" class="date-label">Data de nascimento</label>
