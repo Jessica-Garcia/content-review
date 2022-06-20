@@ -37,6 +37,19 @@
             20px -10px 10px orange,
             -20px 10px 10px lightblue,
             20px 20px 10px purple;
+
+            transition-property: all;
+            transition-duration: 1.5s;
+            transition-timing-function: cubic-bezier(0.085, 0.92, 0.175, 1.5);
+            transition-delay: 0.2s;
+        }
+
+        .div-1:hover {
+
+            width: 350px;
+            height: 350px;
+            border-radius: 0;
+            transform: rotate(180deg);
         }
 
         .div-2{
@@ -51,6 +64,17 @@
             20px -10px 10px rgb(24, 147, 108),
             -20px 10px 10px lightblue,
             20px 20px 10px rgb(132, 116, 132);
+
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+
+        }
+
+        .div-2:hover {
+
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+            border-radius: 50%;
 
         }
         .div-3{
@@ -71,6 +95,18 @@
             20px -10px 10px rgb(24, 147, 108),
             -20px 10px 10px rgb(38, 115, 141),
             20px 20px 10px rgb(173, 20, 173);
+
+            transition: all 1s cubic-bezier(0.67, -0.38, 0.5, 1.5) 0.2s;
+        }
+
+        .div-3:hover {
+            transform: rotate(-45deg);
+            width: 500px;
+            height: 500px;
+            font-size: 18px;
+            color: chartreuse;
+            background-image: linear-gradient(to left bottom, rgba(194, 186, 121, 0.672), rgba(115, 115, 171, 0.763)),
+            url(../forms/assets/ponte.jpg);
         }
     </style>
 </head>
