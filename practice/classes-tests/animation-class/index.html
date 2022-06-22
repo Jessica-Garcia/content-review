@@ -7,6 +7,90 @@
     <title>Animation</title>
 
     <style>
+
+        body{
+            color: white;
+            background-color: rgba(18, 17, 17, 0.826);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes slide{
+            0%, 10.5%{
+                transform: translateX(0);
+            }
+
+            12.5%, 23.0%{
+                transform: translateX(-650px);
+
+            }
+
+            25%, 35.5% {
+                transform: translateX(-1300px);
+
+            }
+            37.5%, 48%{
+                transform: translateX(-1950px);
+            }
+
+            50.5%, 61% {
+                transform: translateX(-2600px);
+
+            }
+
+            63.5%, 74% {
+                transform: translateX(-3250px);
+            }
+
+            76.5%, 87% {
+                transform: translateX(-3900px);
+
+            }
+
+            89.5%, 100% {
+                transform: translateX(-4550px);
+            }
+        }
+        #external{
+            width: 630px;
+            height: 420px;
+            margin: 0 auto;
+            border: white 10px solid;
+            overflow: hidden;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px black;
+            display: flex;
+        }
+
+        #internal {
+            width: 100%;
+            animation: 
+                slide 
+                16s 
+                linear
+                .1s
+                infinite
+                alternate;
+            animation-play-state: running;
+           
+            display: flex; 
+        }
+
+        #internal:hover {
+            animation-play-state: paused;
+        }
+
+        #internal img{
+            width: 650px;
+            height: 410px;
+            margin: auto auto;
+            object-fit: cover;
+            
+        }
+
+/* 
         #anima-time div{
             margin-bottom: 10px;
             border: red solid 2px;
@@ -31,12 +115,12 @@
         }
 
         #anima-time div:nth-child(1) {
-            /* animation-name: walk;
+            animation-name: walk;
             animation-duration: 2s;
             animation-timing-function: ease-in-out;
 
             animation-iteration-count: infinite;
-            animation-direction: alternate; */
+            animation-direction: alternate;
             animation: 
                 walk 
                 2s 
@@ -57,14 +141,14 @@
             animation-direction: alternate;
             animation-play-state: running;
 
-            /* animation: 
+            animation: 
                 walk 
                 2s 
                 ease-in-out
                 2s 
                 infinite
                 alternate
-                ; */
+                ;
         }
 
         #anima-time div:nth-child(3) {
@@ -77,15 +161,6 @@
             animation-direction: alternate;
             animation-fill-mode: forwards;
             animation-play-state: running;
-
-            /* animation: 
-                walk 
-                2s 
-                ease-in
-                3s 
-                infinite
-                alternate
-                ; */
         }
 
         #anima-time div:nth-child(4) {
@@ -98,16 +173,6 @@
             animation-direction: alternate;
             animation-fill-mode: forwards;
             animation-play-state: running;
-            /* animation: 
-                walk 
-                2s 
-                ease-in
-                3s 
-                infinite
-                alternate
-                forwards
-
-                ; */
         }
 
         #anima-time div:nth-child(1):hover,
@@ -116,19 +181,35 @@
         #anima-time div:nth-child(4):hover 
         {
             animation-play-state: paused;
-        }
+        } */
 
 
     </style>
 
 </head>
 <body>
+
+    <div id="external">
+        <div id="internal">
+            <img src="./assets/pulp_fiction.jpg">
+            <img src="./assets/os-simpsons.jpg">
+            <img src="./assets/burn.jpg">
+            <img src="./assets/closer.jpg">
+            <img src="./assets/dexter.jpg">
+            <img src="./assets/Family-Guy-Reproducao.jpg">
+            <img src="./assets/futurama.png">
+            <img src="./assets/good-omens.jpg">
+        </div>
+    </div>
+
+
+<!-- 
     <h2>Animation</h2>
     <div id="anima-time">
         <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
-    </div>
+    </div> -->
 </body>
 </html>
