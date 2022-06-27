@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media queries</title>
+    <style>
+
+        body{
+            background-color: yellow;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 15px;
+        }
+
+        .container div {
+            background-color: #ccc;
+            margin-bottom: 15px;
+            height: 150px;
+        }
+        @media screen and (min-width: 400px) {
+            body{
+                background-color: orange;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+            }
+
+            .container div {
+                width: 50%;
+                margin-bottom: 0;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div-1">
+            div-1
+        </div>
+        <div class="div-2">
+            div-2
+        </div>
+    </div>
+</body>
+</html>
