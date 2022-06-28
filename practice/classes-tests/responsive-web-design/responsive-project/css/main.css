@@ -21,6 +21,16 @@ h1, h2, h3, h4, h5, h6 {
 .button:hover {
     background: #37a0a0;
 }
+.icon-play{
+    height: 5em;
+    display: none;
+}
+
+.icon-play img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .top-header{
     text-align: center;
 }
@@ -123,13 +133,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: .5em;
 }
 
-.footer-menushare ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-}
-
 .footer-menushare li {
     margin: 0 1em;
     display: inline-block;
@@ -147,3 +150,116 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     display: block;
 }
+
+@media screen and (min-width: 48.75em){
+    
+    .top-header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .icon-play{
+        display: block;
+    }
+
+    .top-nav {
+        background: transparent;
+        align-self: flex-end;
+    }
+    
+    .top-nav ul {
+        display: flex;
+       
+    }
+    
+    .top-nav a {
+        color: #713a84;
+        font-weight: bold;
+    }
+
+
+    .top-nav a:hover {
+        background: #e7d9fc;
+    }
+
+    .top-content{
+        background: #521a66;
+    }
+
+    .top-content-title, 
+    .top-content-subtitle {
+        color: white;
+        
+    }
+
+    .middle-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col {
+        width: 44%;
+        margin: 3%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .main-content-article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-content-article .button{
+        align-self: flex-end;
+    }
+    
+}
+
+@media screen and (min-width: 62.5em) {
+    .top-content {
+        background: 
+            #521a66 
+            url(../images/bg_topo_1198x670.jpg)
+        ;
+        height: 30em;
+        box-sizing: border-box;
+        padding-top: 10em;
+    }
+}
+
+@media screen and (min-width: 74em) {
+    
+    .top-header {
+        justify-content: space-around;
+        gap: 30em;
+    }
+
+    .top-content{
+        background:  #521a66  url(../images/bg_topo_1600x1374.jpg);
+        padding: 15em 5em 10em;
+        background-size: cover;
+        background-position: center;
+        height: 35em;
+    }
+
+    .col {
+        width: 19%;
+        margin: 3%;
+    }
+
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-content-article {
+        width: 40%;
+        margin: 3% 4% 3% 5%;
+    }
+
+    .main-content-article  .button{
+
+        align-self: flex-start;
+    }
+}
+
