@@ -121,6 +121,9 @@ label[for="improve"]::after{
     color: var(--text-color);
     font-size: 0.9rem;
 }
+.spacing {
+    margin-bottom: .5rem;
+}
 
 .radio-style {
     background: white;
@@ -130,6 +133,7 @@ label[for="improve"]::after{
     margin-right: .3rem;
     position: relative;
     border-radius: 50%;
+    top: .3rem;
 }
 
 .checkbox-style{
@@ -139,6 +143,7 @@ label[for="improve"]::after{
     display: inline-block;
     margin-right: .3rem;
     position: relative;
+    top: .2rem;
 }
 
 
