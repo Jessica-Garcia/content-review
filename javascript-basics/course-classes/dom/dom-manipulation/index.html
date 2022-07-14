@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Manipulação via JS</title>
+    <style>
+        
+        #button-red,
+        #button-green,
+        #button-blue,
+        #pink,
+        #purple,
+        #brown {
+            color: white;
+        }
+        
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+        
+        .brown {
+            background-color: brown;
+        }
+
+        #square {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        #circle {
+
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Manipulando valores de input</h2>
+
+    <input 
+        type="text" 
+        name="character" 
+        id="character" 
+        placeholder="Digite um caracter aqui"
+    >
+    <hr>
+    <label for="letter">Letras: </label>
+    <input type="text" name="letter" id="letter" disabled>
+
+    <label for="number">Números: </label>
+    <input type="text" name="number" id="number" disabled>
+
+    <hr>
+
+    <h2>Manipulando estilos de elementos - com style</h2>
+
+    <button id="button-red" class="red">Vermelho</button>
+    <button id="button-green" class="green">Verde</button>
+    <button id="button-blue" class="blue">Blue</button>
+
+    <div id="square" class="yellow"></div>
+
+
+    <h2>Manipulando estilos de elementos - com classes</h2>
+
+    <button id="pink" class="pink">Rosa</button>
+    <button id="purple" class="purple">Roxo</button>
+    <button id="brown" class="brown">Marrom</button>
+
+    <div id="circle" class="red"></div>
+
+
+    <h2>Exercício de fixação</h2>
+
+    <input type="text" name="enter" id="enter">
+    <hr>
+
+    
+
+    <script src="./script.js"></script>
+
+
+</body>
+
+</html>
