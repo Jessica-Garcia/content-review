@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arima', cursive;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(90deg, rgb(162, 90, 228) 0%, rgb(255, 192, 248) 100% );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: solid 2px white;
+    padding: 3rem;
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.new-task-container {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    border-radius: .5rem;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+}
+
+.new-task-input {
+    padding: 1rem;
+    border-radius: .3rem;
+    border: grey solid 1px;
+    width: 60%;
+    flex: 3;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.new-task-input:focus{
+    outline: none;
+    border-color: rgb(173, 109, 232);
+}
+
+.new-task-button {
+    min-width: 35%;
+    border-radius: .3rem;
+    border: solid grey 1px;
+    background: rgb(173, 109, 232);
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+    flex: 1;
+    cursor: pointer;
+}
+
+.tasks-container {
+    border-radius: .5rem;
+    background: white;
+    padding: 1rem;
+    min-height: 80px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+    width: 100%;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 6px 0;
+}
+
+.task-item i {
+    background: rgb(173, 109, 232);
+    color: white;
+    padding: 1rem;
+    border-radius: .3rem;
+}
+
+
+.task-item i:hover,
+.task-item p:hover  {
+    cursor: pointer;
+}
+
+/* .task-item p:hover::after {
+    content: ' Marcar como concluída';
+    position: relative;
+    top: 20px;
+    right: 40px;
+    color: gray;
+} */
+
+
+/* UTILITIES*/
+.error {
+    border: red solid 1px;
+}
+
+.error::placeholder {
+    color: red;
+}
+
+.completed {
+    text-decoration: line-through;
+}
