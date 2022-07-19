@@ -1,0 +1,179 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.content {
+    margin: 4rem auto;
+    max-width: 450px;
+    background: #2b2a2a;
+    padding: 4.3rem;
+    border-radius: .8rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.2rem;
+    gap: 3px;
+}
+
+.top input {
+    width: 20rem;
+    padding: 1rem;
+    border-radius: .8rem;
+    border: 1px solid #191818;
+    outline: none; /* remove a borda do input quando ele recebe o foco*/
+    font-size: 1.2rem;
+    background: #191818;
+    color: #fff;
+}
+
+.top button {
+    width: 3rem;
+    border-radius: .8rem;
+    border: 1px solid #191818;
+    outline: none; /* remove a borda do input quando ele recebe o foco*/
+    font-size: 1.2rem;
+    background: #191818;
+    color: #fff;
+}
+
+.top button:hover{
+   
+    background: #1f1e1e;
+    cursor: pointer;
+    
+}
+.taskText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 9rem;
+    white-space: nowrap;
+
+}
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+   padding: 1.2rem;
+   border-radius: .8rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #191818;
+   margin-bottom: 1.2rem;
+}
+
+.btnAction {
+    border-radius: 1.4rem;
+    border: solid 1px #191818;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-right: .5rem;
+    cursor: pointer;
+    background: #2b2a2a;
+    color: white;
+    outline: none;
+}
+
+.btnAction:hover{
+    background: #3c3a3a;
+}
+
+#editWindow{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.3rem;
+    background: #191818;
+    border: 1px solid #2f2e2e;
+    width: 20rem;
+    border-radius: .8rem;
+    z-index: 200;
+    display: none;
+}
+
+#editWindow.open{
+    display: block;
+}
+#editWindowBackground {
+    position: fixed;
+    top: 0;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+    z-index: 100;
+    right: 0;
+    display: none; /* faz com que desapareça */
+}
+
+#editWindowBackground.open {
+    
+    display: block;
+}
+
+#editWindowBtnClose {
+
+    position: absolute;
+    top: -1.5rem;
+    right: -1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid #2d2c2c;
+    background: #2d2c2c;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.formLine {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.formLine label {
+    margin-bottom: .4rem;
+}
+
+.formLine input {
+    padding: 15px;
+    border: 1px solid #191818;
+    font-size: 1.2rem;
+    outline: none;
+    border-radius: .8rem;
+    background: #2d2c2c;
+    color: white;
+}
+
+.formLine button {
+    background: #2d2c2c;
+    border: 1px solid #191818;
+    padding: .5rem;
+    margin-bottom: .8rem;
+    border-radius: .8rem;
+    color: #ccc;
+    height: 3rem;
+    font-size: 1.3rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.formLine button:hover {
+    background: #3c3a3a;
+}

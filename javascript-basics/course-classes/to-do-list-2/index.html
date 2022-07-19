@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <main class="content">
+        <div class="top">
+            <input 
+                type="text" 
+                name="newTask" 
+                id="newTask"
+                placeholder="Nova tarefa..."
+            >
+            <button id="addTask">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+
+        <ul id="taskList">
+        </ul>
+
+        <div id="editWindow">
+            <button id="editWindowBtnClose">
+                <i class="fa fa-remove fa-2x"></i>
+            </button>
+            <h2 id="editTaskId"></h2>
+            <hr>
+            <form>
+                <div class="formLine">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="taskEditName">
+                </div>
+                <div class="formLine">
+                    <button id="updateTask">
+                        Salvar
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="editWindowBackground">
+
+        </div>
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/5de4915d89.js" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
