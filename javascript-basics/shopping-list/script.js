@@ -1,9 +1,18 @@
 const itemInput = document.getElementById('item-name-input');
 const addItemButton = document.getElementById('add-item-button');
-const list= document.getElementById('item-list-container');
+const list = document.getElementById('item-list-container');
 const dbItems = [];
 
 const generateId = () => Math.floor(Math.random() * Date.now());
+
+const newItemObj = (input) => {
+
+    return {
+        name: input.value,
+        id: generateId(),
+        checked: false
+    }
+}
 
 const createLiElement = () => {
     const li = document.createElement('li');
@@ -78,7 +87,7 @@ const createItem = () => {
     return listItem;
 }
 
-const addItemToList = () => {
+const showItemInList = () => {
     
     if(itemInput.value.trim().length < 1) return;
     
@@ -89,9 +98,9 @@ const addItemToList = () => {
 }
 
 
-const addItemWithEnterKey = (e) => {
-    if (e.key === 'Enter') addItemToList();
+const showItemWithEnterKey = (e) => {
+    if (e.key === 'Enter') showItemInList();
 }
 
-addItemButton.addEventListener('click', addItemToList);
-document.addEventListener('keypress', addItemWithEnterKey);
+addItemButton.addEventListener('click', showItemInList);
+document.addEventListener('keypress', showItemWithEnterKey);
