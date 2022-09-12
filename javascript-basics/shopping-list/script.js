@@ -1,106 +1,89 @@
 const itemInput = document.getElementById('item-name-input');
 const addItemButton = document.getElementById('add-item-button');
 const list = document.getElementById('item-list-container');
-const dbItems = [];
+const shoppingList = localStorage.getItem('shopping-list');
+const dbItems =  shoppingList
+    ? JSON.parse(shoppingList)
+    : [];
 
 const generateId = () => Math.floor(Math.random() * Date.now());
 
-const newItemObj = (input) => {
+const saveItemInList = () => {
+    
+    const inputValue = itemInput.value;
+    itemInput.value = '';
+    if(!inputValue.trim().length) return;
 
-    return {
-        name: input.value,
+    const newItem = {
+        name: inputValue,
         id: generateId(),
         checked: false
     }
+    dbItems.push(newItem);
+    localStorage.setItem('shopping-list', JSON.stringify(dbItems));
+    showList();
 }
 
-const createLiElement = () => {
-    const li = document.createElement('li');
-    li.classList.add('item-container')
-    return li;
+const showList = () => {
+    list.innerText = '';
+
+    for (const item of dbItems) {
+        
+        const li = document.createElement('li');
+        li.classList.add('item-container');
+
+        const divItem = document.createElement('div');
+        divItem.classList.add('item');
+
+        const checkInput = document.createElement('input');
+        checkInput.setAttribute('type', 'checkbox');
+        checkInput.setAttribute('id', item.id);
+        checkInput.classList.add('checkbox-input');
+
+        const label = document.createElement('label');
+        label.classList.add('item-text');
+        label.setAttribute('for', item.id);
+        label.innerText = item.name;
+
+        divItem.appendChild(checkInput);
+        divItem.appendChild(label);
+        li.appendChild(divItem);
+
+        const divButtons = document.createElement('div');
+        divButtons.classList.add('item-buttons');
+
+        const editButton = document.createElement('button');
+        editButton.classList.add('action-button');
+        editButton.innerHTML = '<i class="fa-solid fa-pencil">'
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('action-button');
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash">'
+        deleteButton.addEventListener('click', () => deleteItemById(item.id));
+        divButtons.appendChild(editButton);
+        divButtons.appendChild(deleteButton);
+
+        li.appendChild(divButtons);
+        list.appendChild(li);
+    }
 }
 
-const createDivItemElement = () => {
-    const divItem = document.createElement('div');
-    divItem.classList.add('item');
-    return divItem;
-}
-
-const createInputTypeCheckElement = (id) => {
-
-    const checkboxInput = document.createElement('input');
-    checkboxInput.setAttribute('type', 'checkbox');
-    checkboxInput.classList.add('checkbox-input');
-    checkboxInput.setAttribute('id', id);
-    return checkboxInput;
-}
-
-const createLabelElement = (id) => {
-    const labelItemText= document.createElement('label');
-    labelItemText.setAttribute('for', id);
-    labelItemText.classList.add('item-text');
-    labelItemText.innerText = itemInput.value;
-    return labelItemText;
-}
-
-const createDivButtonsElement = () => {
-    const divButtons = document.createElement('div');
-    divButtons.classList.add('item-buttons');
-    return divButtons;
-}
-
-const createEditButtonElement = () => {
-    const editButton = document.createElement('button');
-    editButton.classList.add('action-button');
-    editButton.innerHTML = '<i class="fa-solid fa-pencil">'
-    return editButton;
-}
-
-const createDeleteButtonElement = () => {
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('action-button');
-    deleteButton.innerHTML = '<i class="fa-solid fa-trash">'
-    return deleteButton;
-}
-
-const clearInput = () => itemInput.value = '';
-
-const createItem = () => {
-    const id = generateId();
-    const listItem = createLiElement();
-    const divItem = createDivItemElement();
-    const inputCheckbox = createInputTypeCheckElement(id);
-    const labelItemText = createLabelElement(id);
-    const divButtons = createDivButtonsElement();
-    const editButton = createEditButtonElement();
-    const deleteButton = createDeleteButtonElement();
-
-    divItem.appendChild(inputCheckbox);
-    divItem.appendChild(labelItemText);
-
-    divButtons.appendChild(editButton);
-    divButtons.appendChild(deleteButton);
-
-    listItem.appendChild(divItem);
-    listItem.appendChild(divButtons);
-
-    return listItem;
-}
-
-const showItemInList = () => {
-    
-    if(itemInput.value.trim().length < 1) return;
-    
-    const listItem = createItem();
-    list.appendChild(listItem);
-
-    clearInput();
+const deleteItemById = (id) => {
+    const index = dbItems.findIndex(item => item.id === id);
+    dbItems.splice(index, 1);
+    localStorage.setItem('shopping-list', JSON.stringify(dbItems));
+    showList();
 }
 
 
-const showItemWithEnterKey = (e) => {
-    if (e.key === 'Enter') showItemInList();
+const saveItemWithEnterKey = (e) => {
+    if(e.key === 'Enter') {
+
+        saveItemInList();
+    }
 }
 
-addItemButton.addEventListener('click', showItemInList);
-document.addEventListener('keypress', showItemWithEnterKey);
+addItemButton.addEventListener('click', saveItemInList);
+document.addEventListener('keypress', saveItemWithEnterKey);
+
+showList();
