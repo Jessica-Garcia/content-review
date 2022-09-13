@@ -123,7 +123,7 @@ body {
     background-color: #f2807a;
 }
 
-.item input[type="checkbox"]:checked + label{
+.item input[type="checkbox"]:checked + label {
     text-decoration: line-through;
 }
 
@@ -160,3 +160,106 @@ body {
     padding: .3rem;
 }
 
+.update-item-button {
+    outline: none;
+    background-color: #ff9c97;
+    border-radius: 0.5rem;
+    border: 1px solid #e0ab7f;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 20%; 
+    color: white;
+    font-family: 'Indie Flower', cursive;
+}
+.update-item-button:hover {
+    cursor: pointer;
+    background-color: #f2807a;
+}
+
+#modal-title {
+    color: rgb(51, 45, 45);
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+    padding: .5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 10;
+    width: 500px;
+    height: 12rem;
+    max-width: 80%;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #ccc 1px solid;
+    justify-self: flex-start;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+.modal-body {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-self: center;
+    justify-self: flex-end;
+}
+
+#item-update-input {
+    outline: none;
+    width: 80%;
+    height: 3rem;
+    border-radius: 1rem;
+    border: solid 1px #f2807a;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: rgb(85, 83, 83);
+}
+
+#close-modal {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    border-radius: 0.4rem;
+}
+
+#fade, 
+#modal {
+    transition: .7s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#modal.hide,
+#fade.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+#modal.hide {
+    top: 0;
+}

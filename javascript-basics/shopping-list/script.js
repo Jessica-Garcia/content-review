@@ -6,6 +6,17 @@ const dbItems =  shoppingList
     ? JSON.parse(shoppingList)
     : [];
 
+const closeModalButton = document.getElementById('close-modal');
+const modal= document.getElementById('modal');
+const fade= document.getElementById('fade');
+const updateButton = document.getElementById('update-item-button');
+const itemUpdateInput = document.getElementById('item-update-input');
+
+const toggleModal = () => {
+    modal.classList.toggle('hide');
+    fade.classList.toggle('hide');
+}
+
 const generateId = () => Math.floor(Math.random() * Date.now());
 
 const saveItemInList = () => {
@@ -23,6 +34,7 @@ const saveItemInList = () => {
     localStorage.setItem('shopping-list', JSON.stringify(dbItems));
     showList();
 }
+
 
 const showList = () => {
     list.innerText = '';
@@ -54,11 +66,13 @@ const showList = () => {
 
         const editButton = document.createElement('button');
         editButton.classList.add('action-button');
-        editButton.innerHTML = '<i class="fa-solid fa-pencil">'
+        editButton.innerHTML = '<i class="fa-solid fa-pencil">';
+        editButton.addEventListener('click', () => toggleModal());
+        updateButton.addEventListener('click', toggleModal);
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('action-button');
-        deleteButton.innerHTML = '<i class="fa-solid fa-trash">'
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash">';
         deleteButton.addEventListener('click', () => deleteItemById(item.id));
         divButtons.appendChild(editButton);
         divButtons.appendChild(deleteButton);
@@ -70,11 +84,11 @@ const showList = () => {
 
 const deleteItemById = (id) => {
     const index = dbItems.findIndex(item => item.id === id);
+    console.log(index);
     dbItems.splice(index, 1);
     localStorage.setItem('shopping-list', JSON.stringify(dbItems));
     showList();
 }
-
 
 const saveItemWithEnterKey = (e) => {
     if(e.key === 'Enter') {
@@ -85,5 +99,6 @@ const saveItemWithEnterKey = (e) => {
 
 addItemButton.addEventListener('click', saveItemInList);
 document.addEventListener('keypress', saveItemWithEnterKey);
+closeModalButton.addEventListener('click', () => toggleModal());
 
 showList();
